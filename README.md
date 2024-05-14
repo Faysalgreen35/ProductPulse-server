@@ -2,56 +2,60 @@
 # ProdutPulse
 
 
-Welcome to Craftify Creations, your destination for exploring the diverse world of painting and drawing! Visit our website to unleash your creativity and discover a wide range of artistic expressions. 
+Welcome to ProdutPulse, Discover how to utilize the Alternative Product Information System to its full potential, from adding and updating queries to providing recommendations and interacting with other users.
 
 
 # ProdutPulse  Backend and Fronted Given Below:  
 
-**Live Site URL:** [ProdutPulse Server](https://craftify-creations-server.vercel.app)
+**Live Site URL:** [ProdutPulse Client](https://product-pulse-7aeac.web.app)
 and
-**Live Site URL:** [ProdutPulse Client](https://craftify-creations.web.app/)
+**Live Site URL:** [ProdutPulse Server](https://product-pulse-server-mauve.vercel.app)
  
 
 
 
 ## Website Preview:
- 
 
 <p float="left">
-  <img src="https://i.postimg.cc/cJtfc4zG/craftify.png" width="200" />
-  <img src="https://i.postimg.cc/HsLzyHTd/web2.jpg" width="200" /> 
-  <img src="https://i.postimg.cc/k4cN2YZ2/web3.jpg" width="200" />
+  <img src="https://i.ibb.co/DCnhXsH/web1.jpg" width="200" />
+  <img src="https://i.ibb.co/WPXSPqG/web2.jpg" width="200" /> 
+  <img src="https://i.ibb.co/jv0kFKC/web3.jpg" width="200" />
 </p>
 <p float="left">
-  <img src="https://i.postimg.cc/T13VgqMC/web4.jpg" width="200" />
-  <img src="https://i.postimg.cc/1RvcPTwT/web5.jpg" width="200" /> 
-  <img src="https://i.postimg.cc/0jXpfM9x/web6.jpg" width="200" />  
+  <img src="https://i.ibb.co/QJ1qKYb/web4.jpg" width="200" />
+  <img src="https://i.ibb.co/7z8V1c0/web5.jpg" width="200" /> 
+  <img src="https://i.ibb.co/SR2yJQ2/web6.jpg" width="200" />  
 
-## Painting and Drawing:
-
-Explore the endless possibilities of painting and drawing with ProdutPulse. From traditional techniques to digital artistry, there's something here for every artist.
+ 
 
 
 ## Features:
 
-- **Landscape Painting**: Immerse yourself in the beauty of nature with our stunning mountain view canvases and forest-based landscape paintings.
-  
-- **Portrait Drawing**: Bring your loved ones to life with our exquisite pencil sketch portraits, ink outline portraits, and acrylic portrait canvases.
-  
-- **Watercolour Painting**: Explore the delicate art of watercolor with our floral watercolor creations and lifelike animal watercolor portraits.
-  
-- **Oil Painting**: Experience the richness of oil paints through our realistic oil portraits and captivating abstract oil paintings.
-  
-- **Charcoal Sketching**: Dive into the world of monochrome with our figure charcoal sketches and intricate architectural charcoal drawings.
-  
-- **Cartoon Drawing**: Let your imagination run wild with our playful comic strip drawings and dynamic superhero cartoon designs.
+1. **User Query Management:**
+   - Users can add, update, or delete their own queries about a product in the system.
+   
+2. **Query Viewing:**
+   - Users can view queries posted by others for alternative products on the website.
+   
+3. **Query Details:**
+   - Detailed information about queries, including product details and other recommendations, is accessible.
+   
+4. **Recommendation Addition:**
+   - Users have the ability to add recommendations for certain products based on their experiences or knowledge.
+   
+5. **Recommendation Management:**
+   - Users can delete their own recommendations from the system if needed.
+   
+6.  **Search Functionality:**
+   - A search feature allows users to easily find queries, products, or recommendations.
 
 
+ 
 ## Getting Started
-To visit our store and experience the wonderful world of coffee, simply drop by our location at [insert address]. We look forward to welcoming you!
+To visit our web and experience the wonderful ProdutPulse features, simply visit   our web at  [(https://product-pulse-7aeac.web.app)]. We look forward to welcoming you!
 
 ## Contact Us
-If you have any questions, feedback, or inquiries, feel free to reach out to us at [insert contact information].
+If you have any questions, feedback, or inquiries, feel free to reach out to us at [musnud1234@gmail.com].
 
 
 ## Installation

@@ -74,10 +74,10 @@ const client = new MongoClient(uri, {
 
 
 const cookieOption = {
-  httpOnly:true,
-  semeSite:process.env.NODE_ENV === 'production' ? 'none': 'strict',
+  httpOnly: true,
+  semeSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',
   secure: process.env.NODE_ENV === 'production' ? true : false,
- }
+}
 
 async function run() {
   try {
@@ -101,7 +101,7 @@ async function run() {
         })
         .send({ success: true });
     })
-//clear token
+    //clear token
     app.post('/logout', async (req, res) => {
       const user = req.body;
       console.log('logging out ', user);
@@ -110,12 +110,13 @@ async function run() {
 
 
 
-    app.get('/query',logger, async (req, res) => {
+    app.get('/query', logger, async (req, res) => {
       const cursor = queryCollection.find();
       const result = await cursor.toArray();
       res.send(result);
     })
-    app.get('/recommendation',logger,verifyToken, async (req, res) => {
+
+    app.get('/recommendation', logger, verifyToken, async (req, res) => {
       const cursor = recommendationCollection.find();
       const result = await cursor.toArray();
       res.send(result);
@@ -177,14 +178,39 @@ async function run() {
     });
 
     // recommendation   search   based on user email
-    app.get('/recommendation/email/:recommenderEmail', async (req, res) => {
+    // app.get('/recommendation/email/:recommenderEmail',logger, verifyToken, async (req, res) => {
+    //   try {
+    //     // Extract the user email from the request parameters
+    //     const userEmail = req.params.recommenderEmail;
+    //     // const tokenEmail = req.user.email
+
+    //     // Search for data in the query collection based on the user email
+    //     const result = await recommendationCollection.find({ recommenderEmail: userEmail }).toArray();
+
+    //     // Send the search result back to the client
+    //     res.send(result);
+    //   } catch (error) {
+    //     // If an error occurs, send an error response
+    //     console.error('Error searching data by email:', error);
+    //     res.status(500).json({ error: 'Internal server error' });
+    //   }
+    // });
+
+    app.get('/recommendation/email/:recommenderEmail', verifyToken, async (req, res) => {
       try {
         // Extract the user email from the request parameters
         const userEmail = req.params.recommenderEmail;
-
+        const tokenEmail = req.user.email;
+        console.log('token match',userEmail,tokenEmail)
+        // Check if the user associated with the token is the same as the requested user
+        if (userEmail !== tokenEmail) {
+          return res.status(403).json({ error: 'Forbidden access' });
+        }
+    
+        
         // Search for data in the query collection based on the user email
         const result = await recommendationCollection.find({ recommenderEmail: userEmail }).toArray();
-
+    
         // Send the search result back to the client
         res.send(result);
       } catch (error) {
@@ -193,7 +219,7 @@ async function run() {
         res.status(500).json({ error: 'Internal server error' });
       }
     });
-
+    
     // recommendation   search   based on user email
     app.get('/recommendations/email/:QueryEmail', async (req, res) => {
       try {
