@@ -21,20 +21,18 @@ and
  
 
 
-
 ## Website Preview:
 
 <p float="left">
-  <img src="https://i.ibb.co/DCnhXsH/web1.jpg" width="200" />
-  <img src="https://i.ibb.co/WPXSPqG/web2.jpg" width="200" /> 
-  <img src="https://i.ibb.co/jv0kFKC/web3.jpg" width="200" />
+  <img src="https://i.postimg.cc/VNTysQj1/web1.jpg" width="200" height="200" />
+  <img src="https://i.postimg.cc/SN4BxGzX/web2.jpg" width="200" height="200" /> 
+  <img src="https://i.postimg.cc/D0rRcSRy/web3.jpg" width="200" height="200" />
 </p>
 <p float="left">
-  <img src="https://i.ibb.co/QJ1qKYb/web4.jpg" width="200" />
-  <img src="https://i.ibb.co/7z8V1c0/web5.jpg" width="200" /> 
-  <img src="https://i.ibb.co/SR2yJQ2/web6.jpg" width="200" />  
-
- 
+  <img src="https://i.postimg.cc/y60qKGW4/web4.jpg" width="200" height="200" />
+  <img src="https://i.postimg.cc/XJyRpH85/web5.jpg" width="200" height="200" /> 
+  <img src="https://i.postimg.cc/zvZ9WCtc/web6.jpg" width="200" height="200" />  
+</p>
 
 
 ## Features:
