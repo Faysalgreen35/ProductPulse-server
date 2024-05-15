@@ -160,11 +160,16 @@ async function run() {
 
 
     // Endpoint to search data based on user email
-    app.get('/query/email/:useremail', async (req, res) => {
+    app.get('/query/email/:useremail',logger, verifyToken, async (req, res) => {
       try {
         // Extract the user email from the request parameters
         const userEmail = req.params.useremail;
-
+        const tokenEmail = req.user.email;
+        console.log('token match',userEmail,tokenEmail)
+        // Check if the user associated with the token is the same as the requested user
+        if (userEmail !== tokenEmail) {
+          return res.status(403).json({ error: 'Forbidden access' });
+        }
         // Search for data in the query collection based on the user email
         const result = await queryCollection.find({ useremail: userEmail }).toArray();
 
@@ -176,25 +181,7 @@ async function run() {
         res.status(500).json({ error: 'Internal server error' });
       }
     });
-
-    // recommendation   search   based on user email
-    // app.get('/recommendation/email/:recommenderEmail',logger, verifyToken, async (req, res) => {
-    //   try {
-    //     // Extract the user email from the request parameters
-    //     const userEmail = req.params.recommenderEmail;
-    //     // const tokenEmail = req.user.email
-
-    //     // Search for data in the query collection based on the user email
-    //     const result = await recommendationCollection.find({ recommenderEmail: userEmail }).toArray();
-
-    //     // Send the search result back to the client
-    //     res.send(result);
-    //   } catch (error) {
-    //     // If an error occurs, send an error response
-    //     console.error('Error searching data by email:', error);
-    //     res.status(500).json({ error: 'Internal server error' });
-    //   }
-    // });
+ 
 
     app.get('/recommendation/email/:recommenderEmail',logger, verifyToken, async (req, res) => {
       try {
