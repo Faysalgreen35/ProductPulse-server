@@ -196,7 +196,7 @@ async function run() {
     //   }
     // });
 
-    app.get('/recommendation/email/:recommenderEmail', verifyToken, async (req, res) => {
+    app.get('/recommendation/email/:recommenderEmail',logger, verifyToken, async (req, res) => {
       try {
         // Extract the user email from the request parameters
         const userEmail = req.params.recommenderEmail;
