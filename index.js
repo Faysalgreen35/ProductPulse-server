@@ -221,11 +221,16 @@ async function run() {
     });
     
     // recommendation   search   based on user email
-    app.get('/recommendations/email/:QueryEmail', async (req, res) => {
+    app.get('/recommendations/email/:QueryEmail',logger,verifyToken, async (req, res) => {
       try {
         // Extract the user email from the request parameters
         const userEmail = req.params.QueryEmail;
-
+        const tokenEmail = req.user.email;
+        console.log('token match',userEmail,tokenEmail)
+        // Check if the user associated with the token is the same as the requested user
+        if (userEmail !== tokenEmail) {
+          return res.status(403).json({ error: 'Forbidden access' });
+        }
         // Search for data in the query collection based on the user email
         const result = await recommendationCollection.find({ QueryEmail: userEmail }).toArray();
 
