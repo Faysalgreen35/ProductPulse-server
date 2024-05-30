@@ -50,8 +50,9 @@ const verifyToken = async (req, res, next) => {
     //if token is valid then it would be docoded
 
     console.log('value in the token', decoded)
+    req.decoded = decoded;
 
-    req.user = decoded
+    // req.user = decoded
 
     next()
   })
@@ -147,7 +148,7 @@ async function run() {
 
     
     //users api
-    app.get('/users',  async (req, res) => {
+    app.get('/users',verifyToken, verifyAdmin,  async (req, res) => {
 
       const result = await userCollection.find().toArray();
       res.send(result);
